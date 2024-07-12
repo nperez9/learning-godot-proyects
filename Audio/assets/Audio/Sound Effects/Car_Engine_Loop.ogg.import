@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cv0q3i16m4gyq"
+path="res://.godot/imported/Car_Engine_Loop.ogg-a375575f05b213622dbbc024f1517cdc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Sound Effects/Car_Engine_Loop.ogg"
+dest_files=["res://.godot/imported/Car_Engine_Loop.ogg-a375575f05b213622dbbc024f1517cdc.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
