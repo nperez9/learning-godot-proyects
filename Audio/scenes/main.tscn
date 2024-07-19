@@ -1,3 +1,43 @@
-[gd_scene format=3 uid="uid://bavgpw065x3ne"]
+[gd_scene load_steps=6 format=3 uid="uid://bavgpw065x3ne"]
+
+[ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://assets/Player Controller/Player.tscn" id="1_pujrk"]
+[ext_resource type="PackedScene" uid="uid://crvwglv0qgjy0" path="res://assets/City/CityMap.tscn" id="1_v222i"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b1dd0"]
+sky_top_color = Color(0.563985, 0.703629, 1, 1)
+sky_horizon_color = Color(0.690996, 0.718157, 0.78325, 1)
+ground_horizon_color = Color(0.690996, 0.718157, 0.78325, 1)
+
+[sub_resource type="Sky" id="Sky_yaqwf"]
+sky_material = SubResource("ProceduralSkyMaterial_b1dd0")
+
+[sub_resource type="Environment" id="Environment_qtysp"]
+background_mode = 2
+sky = SubResource("Sky_yaqwf")
+tonemap_mode = 2
+ssao_enabled = true
+ssao_radius = 2.33
+ssao_intensity = 2.37
+ssao_ao_channel_affect = 0.45
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.0983218, 0.335111, 0.269213, 1)
+fog_light_energy = 1.29
+fog_sun_scatter = 0.15
+fog_density = 0.0515
+fog_aerial_perspective = 0.406
+fog_sky_affect = 0.571
+fog_height = -56.63
 
 [node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qtysp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.999848, -0.0145701, 0.00960724, 0, 0.550481, 0.834848, -0.0174525, 0.834721, -0.550397, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_pujrk")]
+
+[node name="CityMap" parent="." instance=ExtResource("1_v222i")]
