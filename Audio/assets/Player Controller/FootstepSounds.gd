@@ -7,10 +7,11 @@ var last_play_time : float
 
 @onready var player : CharacterBody3D = get_parent()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (_can_play_footsteps()):
-		print("sound")
+		last_play_time = Time.get_unix_time_from_system()
+		stream = footstep_sounds[randi_range(0, footstep_sounds.size() - 1)]
+		play()
 
 func _can_play_footsteps() -> bool:
 	if not player.is_on_floor():

@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bavgpw065x3ne"]
+[gd_scene load_steps=11 format=3 uid="uid://bavgpw065x3ne"]
 
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://assets/Player Controller/Player.tscn" id="1_pujrk"]
 [ext_resource type="PackedScene" uid="uid://crvwglv0qgjy0" path="res://assets/City/CityMap.tscn" id="1_v222i"]
 [ext_resource type="AudioStream" uid="uid://c23ls77ap1eb8" path="res://assets/Audio/Sound Effects/StreetAmbience (2).ogg" id="3_i5v7b"]
+[ext_resource type="PackedScene" uid="uid://dwt2me8jiwhde" path="res://assets/City/Models/taxi.glb" id="4_emp38"]
+[ext_resource type="Script" path="res://scenes/Taxi.gd" id="4_wnke2"]
+[ext_resource type="AudioStream" uid="uid://cv0q3i16m4gyq" path="res://assets/Audio/Sound Effects/Car_Engine_Loop.ogg" id="5_wkb4b"]
+[ext_resource type="AudioStream" uid="uid://bxel47geti0y8" path="res://assets/Audio/Music/Alexander Ehlers - Twists.mp3" id="7_8b1cl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b1dd0"]
 sky_top_color = Color(0.563985, 0.703629, 1, 1)
@@ -47,3 +51,25 @@ shadow_enabled = true
 stream = ExtResource("3_i5v7b")
 volume_db = -22.145
 autoplay = true
+bus = &"SFX"
+
+[node name="Taxi" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -28.528)
+script = ExtResource("4_wnke2")
+
+[node name="TaxiSound" type="AudioStreamPlayer3D" parent="Taxi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04246, 0.711486, -2.11216)
+stream = ExtResource("5_wkb4b")
+volume_db = -7.066
+autoplay = true
+bus = &"SFX"
+doppler_tracking = 1
+
+[node name="Model" parent="Taxi" instance=ExtResource("4_emp38")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99249, 0.815064, -1.21034)
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_8b1cl")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
