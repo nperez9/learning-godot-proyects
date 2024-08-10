@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf1pwgl0y0mi6"]
+[gd_scene load_steps=6 format=3 uid="uid://cf1pwgl0y0mi6"]
 
 [ext_resource type="Script" path="res://assets/Player Controller/PlayerController.gd" id="1_krxqb"]
 [ext_resource type="Script" path="res://assets/Player Controller/Interaction/InteractionController.gd" id="2_xq075"]
+[ext_resource type="Script" path="res://assets/Player Controller/FootstepSounds.gd" id="3_k1gyg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lt5te"]
 radius = 0.3
@@ -40,3 +41,6 @@ grow_vertical = 2
 label_settings = SubResource("LabelSettings_cbwra")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="FootstepSounds" type="AudioStreamPlayer3D" parent="."]
+script = ExtResource("3_k1gyg")
