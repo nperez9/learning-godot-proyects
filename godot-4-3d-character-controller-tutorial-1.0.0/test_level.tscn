@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjttjqh2fuuhu"]
+
+[ext_resource type="PackedScene" uid="uid://cnedxfn2pxh2t" path="res://level/level.tscn" id="1_1c2mv"]
+[ext_resource type="PackedScene" uid="uid://d1mm8mxx0xhkj" path="res://player/player_3d_sophia.tscn" id="2_f7g2b"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Level" parent="." instance=ExtResource("1_1c2mv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26382, -4.33399, 0.873577)
+
+[node name="Player3D" parent="." instance=ExtResource("2_f7g2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.316, -4.33038, -39.6413)
