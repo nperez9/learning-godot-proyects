@@ -8,5 +8,5 @@
 [node name="Level" parent="." instance=ExtResource("1_1c2mv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26382, -4.33399, 0.873577)
 
-[node name="Player3D" parent="." instance=ExtResource("2_f7g2b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.316, -4.33038, -39.6413)
+[node name="Shopia" parent="." instance=ExtResource("2_f7g2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.907169, -4.33037, -38.9441)
